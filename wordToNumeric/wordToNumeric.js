@@ -7,10 +7,10 @@ let words = {
 let mult = { hundred: 100, thousand: 1000, million: 1000000 }
 
 function numericWord(str) {
-  return str.split(/ |-/).reduce(function (value, word) {
-    if (words[word]) value += words[word];
-    if (mult[word]) value += mult[word] * (value % mult[word]) - (value % mult[word]);
-    return value;
+  return str.split(/ |-/).reduce(function (acc, curr) {
+    if (words[curr]) acc += words[curr];
+    if (mult[curr]) acc += mult[curr] * (acc % mult[curr]) - (acc % mult[curr]);
+    return acc;
   }, 0);
 
 }

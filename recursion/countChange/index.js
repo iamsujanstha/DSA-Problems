@@ -21,5 +21,5 @@ let countChange = function (money, coins) {
 }
 
 // Example usage:
-console.log(countChange(98, [3, 14, 8])); // Outputs: Number of ways to make 98 with coins [3, 14, 8]
+// console.log(countChange(98, [3, 14, 8])); // Outputs: Number of ways to make 98 with coins [3, 14, 8]
 console.log(countChange(10, [5, 2, 3]));  // Outputs: 4
