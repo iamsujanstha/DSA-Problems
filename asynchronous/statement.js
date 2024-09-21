@@ -14,3 +14,4 @@ console.log(`Eat ${pizzaType} piza`)
 
 
 //JavaScript runs synchronously by default, but certain operations (e.g., network requests, file reading, or timers) are asynchronous.
+//Callback function , Promise and Async Await make Asynchronus code into synchronous.

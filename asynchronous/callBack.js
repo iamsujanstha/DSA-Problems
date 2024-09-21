@@ -10,8 +10,8 @@ function orderPizza(callback) {
   console.log('Pizza was Ordered')
 }
 
-function pizzaReady(pizzaType) {
+function callback(pizzaType) {
   console.log(`Eat the ${pizzaType} pizza`)
 }
 
-orderPizza(pizzaReady);
+orderPizza(callback);
