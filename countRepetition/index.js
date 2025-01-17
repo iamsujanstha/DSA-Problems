@@ -1,11 +1,11 @@
 function countRepeatedWord(str) {
-  return [...str].reduce((countObj, word) => {
-    if (!countObj[word]) {
-      countObj[word] = 1;
+  return [...str].reduce((acc, curr) => {
+    if (!acc[curr]) {
+      acc[curr] = 1;
     }
-    countObj[word]++;
+    acc[curr]++;
 
-    return countObj;
+    return acc;
   }, {})
 }
 
