@@ -1,28 +1,31 @@
 function permutations(str) {
-  // Base case: if the string is of length 1 or less, return it as the only permutation
+  // Base case
   if (str.length <= 1) {
     return [str];
   }
 
   let allPermutations = [];
 
-  // Iterate over each character in the string
+  // Recursive case: iterate over each character in the string
   for (let i = 0; i < str.length; i++) {
-    let char = str[i];  // current character
-    let remainingString = str.slice(0, i) + str.slice(i + 1);  // string without the current character
+    let char = str[i]; // Fix the current character (one character at a time)
 
-    // Get permutations of the remaining string
-    let remainingPermutations = permutations(remainingString);
+    // Recursively get all permutations of the remaining string
+    let smallOp = permutations(str.slice(0, i) + str.slice(i + 1));
 
-    // Add the current character in front of each permutation
-    for (let perm of remainingPermutations) {
+    // Calculate: combine the fixed character with each of the remaining permutations
+    for (let perm of smallOp) {
       allPermutations.push(char + perm);
     }
   }
 
-  // Remove duplicates using Set and return as an array
+  // Deduplication: Remove duplicates using a Set and return
   return Array.from(new Set(allPermutations));
 }
 
-// Calling the function and printing the output
-console.log(permutations("abcad"));
+console.log(permutations("ABC"));
+
+/*  In the permutations function provided, swapping is not explicitly used as a method to generate permutations. 
+    Instead, permutations are generated recursively by fixing one character at a time and 
+    finding permutations of the remaining characters. 
+*/
