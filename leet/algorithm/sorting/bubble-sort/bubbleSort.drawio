@@ -1,0 +1,19 @@
+<mxfile host="65bd71144e">
+    <diagram id="vQBk22CPgNbIE570mZqh" name="Page-1">
+        <mxGraphModel dx="1982" dy="590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://favtutor.com/resources/images/uploads/mceu_61632030011682402256084.png;" vertex="1" parent="1">
+                    <mxGeometry x="140" width="709.9" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="&amp;nbsp;&lt;font style=&quot;font-size: 22px;&quot;&gt;Here Pass &lt;font style=&quot;font-size: 22px;&quot;&gt;denotes&lt;/font&gt; outer loop i = 1 goes upto i &amp;lt;= arr.length -1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#3700CC;fillColor=#6a00ff;fontColor=#ffffff;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="510" width="640" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://miro.medium.com/v2/resize:fit:401/1*7seGXJi3te9beNfpAvFXEQ.gif;" vertex="1" parent="1">
+                    <mxGeometry x="-390" width="520" height="182.84" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
