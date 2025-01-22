@@ -1,0 +1,16 @@
+<mxfile host="65bd71144e">
+    <diagram id="GxEBh3iSR1YQLpTSEIJi" name="Page-1">
+        <mxGraphModel dx="2222" dy="590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png;" vertex="1" parent="1">
+                    <mxGeometry x="10" width="643.65" height="380" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://miro.medium.com/v2/resize:fit:700/1*5WXRN62ddiM_Gcf4GDdCZg.gif;" vertex="1" parent="1">
+                    <mxGeometry x="-520" width="520" height="297" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
