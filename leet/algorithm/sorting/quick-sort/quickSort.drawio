@@ -1,0 +1,13 @@
+<mxfile host="65bd71144e">
+    <diagram id="1JqaUNqAdcRRmrdOeoov" name="Page-1">
+        <mxGraphModel dx="1372" dy="1706" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.tutorialspoint.com/data_structures_algorithms/images/quick_sort_partition_animation.gif;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="-130" width="700" height="280" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
