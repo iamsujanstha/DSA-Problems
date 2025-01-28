@@ -3,3 +3,8 @@ function majorityElement(arr) {
 }
 
 console.log(majorityElement([1, 3, 4, 2, 2, 3, 1, 3, 3, 3]))
+
+/* 
+  Time Complexity: O(nlogn)
+  Space Complexity: O(1)
+ */
