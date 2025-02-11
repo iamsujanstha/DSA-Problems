@@ -13,7 +13,7 @@ function binarySearch(arr, key) {
   }
 }
 
-console.log(binarySearch([10, 23, 30, 43, 53], 11));
+console.log(binarySearch([10, 23, 30, 43, 53], 43));
 
 /*
   Time Complexity: O(logN) -> Use only when array is sorted.
