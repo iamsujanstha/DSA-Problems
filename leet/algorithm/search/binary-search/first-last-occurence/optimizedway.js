@@ -34,3 +34,7 @@ function findFirstAndLastPosition(nums, target, isFirst) {
 const nums = [7, 7, 8, 8, 8, 8, 8, 10];
 const target = 8;
 console.log(findFirstAndLastPosition(nums, target)); // Output: [0, 4]
+
+/* If Sorted then apply Binary Search 
+  Time Complexity: O(logn)
+ */

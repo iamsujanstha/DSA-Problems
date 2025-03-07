@@ -1,19 +1,25 @@
-function binarySearch(arr, key) {
-  if (arr.length === 0) return -1;
+// Basic Structure of Binary Search
+function binarySearch(arr, target) {
+  let start = 0;
+  let end = arr.length - 1;
 
-  let mid = Math.floor(arr.length / 2);
+  while (start <= end) {
+    let mid = Math.floor((start + end) / 2);
 
-  if (arr[mid] === key) {
-    return mid;
-  } else if (key < arr[mid]) {
-    return binarySearch(arr.slice(0, mid), key);
-  } else {
-    let rightResult = binarySearch(arr.slice(mid + 1), key); // Search right half.
-    return rightResult === -1 ? -1 : rightResult + mid + 1; // Adjust index for right half.
+    if (arr[mid] === target) {
+      return mid; // Target found, return index
+    } else if (arr[mid] < target) {
+      start = mid + 1; // Search in the right half
+    } else {
+      end = mid - 1; // Search in the left half
+    }
   }
+
+  return -1; // Target not found
 }
 
 console.log(binarySearch([10, 23, 30, 43, 53], 43));
+console.log(binarySearch([10, 23, 30, 43, 53], 100));
 
 /*
   Time Complexity: O(logN) -> Use only when array is sorted.
