@@ -18,4 +18,8 @@ function findSqureRoot(num) {
   return end;
 }
 
-console.log(findSqureRoot(10))
+console.log(findSqureRoot(25))
+
+/*
+  Time Complexity: O(logn)
+ */
