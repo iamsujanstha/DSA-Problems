@@ -25,4 +25,6 @@ function generateBalancedTeamByRating(participants, teams) {
   return groupedTeams;
 }
 
-console.log(generateBalancedTeamByRating(participants, teams))
+// console.log(generateBalancedTeamByRating(participants, teams))
+
+module.exports = { generateBalancedTeamByRating, participants, teams }

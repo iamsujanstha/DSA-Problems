@@ -11,4 +11,6 @@ function intersection(firstArr, secondArr) {
   return result;
 }
 
-console.log(intersection([3, 1, 4, 2], [4, 5, 3, 6]))
+// console.log(intersection([3, 1, 4, 2], [4, 5, 3, 6]))
+
+module.exports = { intersection }

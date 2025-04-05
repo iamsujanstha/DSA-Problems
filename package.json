@@ -1,0 +1,24 @@
+{
+  "name": "dsa-problems",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamsujanstha/DSA-Problems.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/iamsujanstha/DSA-Problems/issues"
+  },
+  "homepage": "https://github.com/iamsujanstha/DSA-Problems#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

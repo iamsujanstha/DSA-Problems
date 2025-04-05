@@ -1,7 +1,7 @@
 function countRepeatedWord(str) {
   return [...str].reduce((acc, curr) => {
     if (!acc[curr]) {
-      acc[curr] = 1;
+      acc[curr] = 0;
     }
     acc[curr]++;
 
@@ -9,4 +9,4 @@ function countRepeatedWord(str) {
   }, {})
 }
 
-console.log(countRepeatedWord('This is alpha'))
+module.exports = { countRepeatedWord }
