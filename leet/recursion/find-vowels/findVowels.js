@@ -5,12 +5,12 @@ function findVowels(str) {
   let strWithVowels = [];
 
   if ('aeiou'.includes(str[0])) {
-    str = str + string[0];
+    strWithVowels.push(str[0])
   }
 
   let smallOp = findVowels(str.slice(1));
 
-  return strWithVowels.concat(smallOp)
+  return strWithVowels.concat(smallOp).join('')
 }
 
-console.log(findVowels('This is world').join(''))
+console.log(findVowels('This is world'))

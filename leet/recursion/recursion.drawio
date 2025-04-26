@@ -1,11 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram id="8dTxxns6DzbU1lpWCJtj" name="Page-1">
-        <mxGraphModel dx="1372" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1984" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.simplilearn.com/ice9/free_resources_article_thumb/Problem_Breakdown-Recursive_Algorithm.png;" vertex="1" parent="1">
-                    <mxGeometry x="10" width="740" height="385.65" as="geometry"/>
+                <mxCell id="2" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.simplilearn.com/ice9/free_resources_article_thumb/Problem_Breakdown-Recursive_Algorithm.png;" parent="1" vertex="1">
+                    <mxGeometry x="-60" y="200" width="740" height="385.65" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

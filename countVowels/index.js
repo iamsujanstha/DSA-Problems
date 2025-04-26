@@ -8,3 +8,5 @@ function countVowels(str) {
 }
 
 console.log(countVowels("Hey JS! You Are amazing"))
+
+module.exports = { countVowels }

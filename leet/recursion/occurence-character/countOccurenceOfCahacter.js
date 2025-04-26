@@ -11,4 +11,4 @@ function countOccurenceCharacter(str, char) {
   return smallOp;
 }
 
-console.log(countOccurenceCharacter("hello there", 'l'))
+console.log(countOccurenceCharacter("hello there", 'e'))
