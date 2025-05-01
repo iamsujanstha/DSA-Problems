@@ -10,17 +10,18 @@ const intervals = [
  */
 function mergeIntervals(intervals) {
   let result = [];
-  let start = intervals[0][0]
-  let end = intervals[0][1];
+  let start = intervals[0][0] //1
+  let end = intervals[0][1]; //5
 
-  for (let i = 1; i < intervals.length; i++) {
+  for (let i = 1; i < intervals.length; i++) { //skip first sub-array
     const [currentStart, currentEnd] = intervals[i];
 
+    // Check if current interval overlaps with previous
     if (currentStart <= end) {
-      end = Math.max(end, currentEnd)
+      end = Math.max(end, currentEnd) //If overlapping, merge by updating the end time
     }
     else {
-      result.push([start, end]);
+      result.push([start, end]);  //push current merged interval to results
       end = currentEnd;
       start = currentStart;
     }
