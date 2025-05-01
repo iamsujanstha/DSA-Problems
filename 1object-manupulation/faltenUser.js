@@ -15,11 +15,11 @@ const input = {
   "age": 30
 }
  */
-function flatenObj(input, parentKey = '', result = {}) {
+function flatenUser(input, parentKey = '', result = {}) {
   for (let key in input) {
     const newKey = parentKey ? `${parentKey}.${key}` : key;
     if (typeof input[key] === 'object') {
-      flatenObj(input[key], newKey, result)
+      flatenUser(input[key], newKey, result)
     } else {
       result[newKey] = input[key]
     }
@@ -28,4 +28,4 @@ function flatenObj(input, parentKey = '', result = {}) {
   return result;
 }
 
-console.log(flatenObj(input))
+console.log(flatenUser(input))

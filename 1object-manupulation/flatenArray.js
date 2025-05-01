@@ -1,37 +1,22 @@
-const company = {
-  Engineering: {
-    Frontend: ['Alice', 'Charlie'],
-    Backend: ['Bob'],
-  },
-  HR: {
-    Recruitment: ['David'],
-    Operations: ['Eva', 'Frank'],
-  },
-};
+const data = [1, [2, 3], [4, [5, 6]]]
 
-/* OUTPUT
-[
-  { name: 'Alice', department: 'Engineering', team: 'Frontend' },
-  { name: 'Charlie', department: 'Engineering', team: 'Frontend' },
-  { name: 'Bob', department: 'Engineering', team: 'Backend' },
-  { name: 'David', department: 'HR', team: 'Recruitment' },
-  { name: 'Eva', department: 'HR', team: 'Operations' },
-  { name: 'Frank', department: 'HR', team: 'Operations' },
-]
- */
-
-function flatenEmployee(company) {
-  let result = [];
-  for (let department in company) {
-    let teams = company[department]
-    for (let team in teams) {
-      const members = teams[team];
-      for (let name of members) {
-        result.push({ name, department, team })
-      }
+function flatenArray(arr) {
+  if (arr.length === 0) return [arr];
+  let result = []
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      result = result.concat(flatenArray(item))
+    } else {
+      result.push(item);
     }
-  }
-  return result
-}
+  })
 
-console.log(flatenEmployee(company))
+  return result;
+}
+// const flattenArray = (arr) =>
+//   arr.reduce((acc, item) =>
+//     acc.concat(Array.isArray(item) ? flattenArray(item) : item)
+//     , []);
+
+console.log(flatenArray(data))
+
