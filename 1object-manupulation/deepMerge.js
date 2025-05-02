@@ -17,7 +17,8 @@ const obj2 = {
       notifications: false
     }
   },
-  status: "inactive"
+  status: "inactive",
+  home: "town"
 };
 
 
@@ -28,6 +29,7 @@ function deepMerge(obj1, obj2) {
     const val1 = obj1[key];
     const val2 = obj2[key];
 
+    if (!obj1[key]) result[key] = val2;
     if (typeof val2 === 'object' && val1 && val2 && !Array.isArray(obj1) && !Array.isArray(obj2)) {
       result[key] = deepMerge(val1, val2)
     }
