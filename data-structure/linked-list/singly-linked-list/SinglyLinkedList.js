@@ -200,7 +200,7 @@ console.log(newLinkedList.remove(-1))
 // console.log(newLinkedList.search(40))
 // console.log(newLinkedList.get(-1))
 console.log(newLinkedList.toString())
-newLinkedList.deleteAll();
+// newLinkedList.deleteAll();
 console.log(newLinkedList)
 
 // Time Complexity: O(1)
