@@ -15,12 +15,9 @@ class DoublyLinkedList {
 
   append(value) {
     const newNode = new Node(value);
-
     if (this.length === 0) {
-      this.head = newNode;
-      this.tail = newNode;
-    }
-    else {
+      this.head = this.tail = newNode;
+    } else {
       this.tail.next = newNode;
       newNode.prev = this.tail;
       this.tail = newNode;
@@ -28,105 +25,167 @@ class DoublyLinkedList {
     this.length++;
   }
 
+  prepend(value) {
+    const newNode = new Node(value);
+    if (this.length === 0) {
+      this.head = this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head.prev = newNode;
+      this.head = newNode;
+    }
+    this.length++;
+  }
+
   toString() {
     let currentNode = this.head;
     let result = '';
-
     while (currentNode) {
       result += currentNode.value;
-      if (currentNode.next) result += ' <-> '
+      if (currentNode.next) result += ' <-> ';
       currentNode = currentNode.next;
-      this.length++;
     }
     return result;
   }
 
-  prepend(value) {
-    let newNode = new Node(value);
-    let currentNode = this.head;
-
-    if (this.length === 0) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      currentNode.prev = newNode;
-      this.head = newNode;
-      newNode.next = currentNode;
-    }
-  }
-
   traversal() {
-    let tempNode = this.head;
-
-    while (tempNode) {
-      console.log(tempNode.value);
-      tempNode = tempNode.next;
+    let currentNode = this.head;
+    while (currentNode) {
+      console.log(currentNode.value);
+      currentNode = currentNode.next;
     }
   }
 
   reverseTraversal() {
-    let tempNode = this.tail;
-
-    while (tempNode) {
-      console.log(tempNode.value);
-      tempNode = tempNode.prev;
+    let currentNode = this.tail;
+    while (currentNode) {
+      console.log(currentNode.value);
+      currentNode = currentNode.prev;
     }
   }
 
   search(target) {
-    let tempNode = this.head;
-    if (this.length === 0) return 'Linked List is empty'
-    for (let i = 0; i < this.length; i++) {
-      if (tempNode.value === target) {
-        return `${target} found at index ${i}`
-      }
-      tempNode = tempNode.next;
+    let currentNode = this.head;
+    let index = 0;
+    while (currentNode) {
+      if (currentNode.value === target) return `${target} found at index ${index}`;
+      currentNode = currentNode.next;
+      index++;
     }
-    return 'Not Found!!'
+    return 'Not Found!!';
   }
 
   get(index, options = { returnValue: false }) {
-    if (this.length === 0) return null;
-
-    if (index === -1 || index === this.length) {
-      return options.returnValue ? this.tail.value : this.tail;
-    }
-
     if (index < 0 || index >= this.length) return null;
-
     let currentNode;
-    let mid = Math.floor(this.length / 2);
-
-    if (index < mid) {
+    if (index < this.length / 2) {
       currentNode = this.head;
-      for (let i = 0; i < index; i++) {
-        currentNode = currentNode.next;
-      }
+      for (let i = 0; i < index; i++) currentNode = currentNode.next;
     } else {
       currentNode = this.tail;
-      for (let i = this.length - 1; i > index; i--) {
-        currentNode = currentNode.prev;
-      }
+      for (let i = this.length - 1; i > index; i--) currentNode = currentNode.prev;
     }
-
     return options.returnValue ? currentNode.value : currentNode;
   }
 
-
   setValue(index, value) {
-    let targetNode = this.get(index);
-    if (targetNode) {
-      targetNode.value = value;
+    const node = this.get(index);
+    if (node) {
+      node.value = value;
+      return true;
     }
     return false;
   }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return 'Invalid index to insert';
+    if (index === 0) return this.prepend(value);
+    if (index === this.length) return this.append(value);
+
+    const newNode = new Node(value);
+    const prevNode = this.get(index - 1);
+    const nextNode = prevNode.next;
+
+    newNode.prev = prevNode;
+    newNode.next = nextNode;
+    prevNode.next = newNode;
+    nextNode.prev = newNode;
+
+    this.length++;
+  }
+
+  popFirst() {
+    if (this.length === 0) return 'Empty Linked List';
+    const poppedNode = this.head;
+    if (this.length === 1) {
+      this.head = this.tail = null;
+    } else {
+      this.head = poppedNode.next;
+      this.head.prev = null;
+      poppedNode.next = null;
+    }
+    this.length--;
+    return poppedNode.value;
+  }
+
+  pop() {
+    if (this.length === 0) return 'Empty Linked List';
+    const poppedNode = this.tail;
+    if (this.length === 1) {
+      this.head = this.tail = null;
+    } else {
+      this.tail = poppedNode.prev;
+      this.tail.next = null;
+      poppedNode.prev = null;
+    }
+    this.length--;
+    return poppedNode.value;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return 'Invalid index';
+    if (index === 0) return this.popFirst();
+    if (index === this.length - 1) return this.pop();
+
+    const targetNode = this.get(index);
+    const prev = targetNode.prev;
+    const next = targetNode.next;
+
+    prev.next = next;
+    next.prev = prev;
+
+    targetNode.next = null;
+    targetNode.prev = null;
+
+    this.length--;
+    return targetNode.value;
+  }
+
+  deleteAll() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
 }
 
-const newDLL = new DoublyLinkedList();
 
-newDLL.append(10)
-newDLL.append(20)
-newDLL.append(30)
+const list = new DoublyLinkedList();
+list.append(10);
+list.append(20);
+list.append(30);
+list.append(40);
+list.append(50);
 
-console.log(newDLL.setValue(1, 400))
-console.log(newDLL.toString())
+console.log(list.toString()); // 10 <-> 20 <-> 30 <-> 40 <-> 50
+
+list.remove(2); // removes 30
+console.log(list.toString()); // 10 <-> 20 <-> 40 <-> 50
+
+list.insert(1, 300);
+console.log(list.toString()); // 10 <-> 300 <-> 20 <-> 40 <-> 50
+
+list.pop();
+console.log(list.toString()); // 10 <-> 300 <-> 20 <-> 40
+
+list.deleteAll()
+console.log(list)
