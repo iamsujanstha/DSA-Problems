@@ -71,6 +71,78 @@ class BinaryTree {
     }
   }
 
+  inOrderTraversal() {
+    if (this.root === null) return;
+    let stack = [];
+    let currentNode = this.root;
+    while (currentNode || stack.length > 0) {
+      while (currentNode) {
+        stack.push(currentNode);
+        currentNode = currentNode.left;
+      }
+      currentNode = stack.pop();
+      console.log(currentNode.value);
+      currentNode = currentNode.right;
+    }
+  }
+
+  inOrderRecursive(node = this.root) {
+    if (!node) return;
+    this.inOrderRecursive(node.left)
+    console.log(node.value);
+    this.inOrderRecursive(node.right)
+  }
+
+
+  postOrderTraversal() {
+    let current = this.root;
+    if (!current) return;
+    let stack = [];
+    let lastVisitedNode = null;
+
+    while (current || stack.length > 0) {
+      if (current) {
+        stack.push(current);
+        current = current.left
+      }
+      else {
+        let peekNode = stack.at(-1);
+        if (peekNode.right && lastVisitedNode !== peekNode.right) {
+          current = peekNode.right
+        }
+        else {
+          console.log(peekNode.value);
+          lastVisitedNode = stack.pop();
+        }
+      }
+    }
+  }
+
+  postOrderRecursive(node = this.root) {
+    if (node) {
+      this.postOrderRecursive(node.left);
+      this.postOrderRecursive(node.right);
+      console.log(node.value);
+    }
+  }
+
+  search(target) {
+    if (this.root === null) return;
+    let queue = [this.root];
+
+    while (queue.length > 0) {
+      let node = queue.shift();
+      if (node.value === target) return true;
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+
+    return false;
+  }
+
+  deleteDeepestNode() {
+
+  }
 }
 
 
@@ -85,6 +157,6 @@ binaryTree.insert('N6')
 binaryTree.insert('N7')
 
 console.log(JSON.stringify(binaryTree, null, 2));
-binaryTree.leverOrderTraversal();
-binaryTree.preOrderRecursive();
+// binaryTree.leverOrderTraversal();
+console.log(binaryTree.search('N15'))
 
