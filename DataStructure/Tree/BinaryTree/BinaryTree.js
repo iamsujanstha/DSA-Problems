@@ -141,8 +141,77 @@ class BinaryTree {
   }
 
   deleteDeepestNode() {
+    if (!this.root) return;
 
+    if (!this.root.left && !this.root.right) {
+      this.root = null;
+      return;
+    }
+
+    let queue = [this.root];
+    let current, parent = null;
+
+    while (queue.length > 0) {
+      current = queue.shift();
+
+      if (current.left) {
+        parent = current;
+        queue.push(current.left);
+      }
+
+      if (current.right) {
+        parent = current;
+        queue.push(current.right);
+      }
+    }
+
+    if (parent.left === current) {
+      parent.left = null;
+    } else if (parent.right === current) {
+      parent.right = null;
+    }
   }
+
+  deleteNode(value) {
+    if (!this.root) return;
+
+    let queue = [this.root];
+    let currentNode, nodeToDelete, parentNode = null;
+
+    // Level order traversal to find:
+    // 1) node to delete
+    // 2) deepest node (current)
+    // 3) parent of deepest node
+
+    while (queue.length > 0) {
+      currentNode = queue.shift();
+
+      if (currentNode.value === value) {
+        nodeToDelete = currentNode;
+      }
+
+      if (currentNode.left) {
+        parentNode = currentNode;
+        queue.push(currentNode.left)
+      }
+
+      if (currentNode.right) {
+        parentNode = currentNode;
+        queue.push(currentNode.right)
+      }
+
+      if (nodeToDelete) {
+        nodeToDelete.value = currentNode.value;
+
+        if (currentNode === parentNode.right) {
+          parentNode.right = null;
+        } else if (currentNode === parentNode.left) {
+          parentNode.left = null;
+        }
+      }
+    }
+  }
+
 }
 
 
@@ -155,8 +224,10 @@ binaryTree.insert('N4')
 binaryTree.insert('N5')
 binaryTree.insert('N6')
 binaryTree.insert('N7')
+binaryTree.insert('N8')
 
+binaryTree.deleteNode('N2')
 console.log(JSON.stringify(binaryTree, null, 2));
 // binaryTree.leverOrderTraversal();
-console.log(binaryTree.search('N15'))
+
 
