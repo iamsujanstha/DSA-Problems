@@ -4,7 +4,7 @@ Function.prototype.myCall = function (thisArgs, ...args) {
 
   // 🧠 MEMORY:
   // Let's say:
-  //   - this === greet
+  //   - this === greet 
   //   - thisArgs === person
   // Temporarily attach `greet` to `person` using a unique Symbol to avoid collision
 
@@ -32,3 +32,16 @@ Function.prototype.myCall = function (thisArgs, ...args) {
   // 6️⃣ Return the result of the original function call (like native .call does)
   return returnValue;
 };
+
+
+//Example Setup
+
+function greet(age, gender) {
+  console.log(`${this.name} is ${age} years old ${gender}`);
+}
+
+const person = {
+  name: "Alice"
+}
+
+greet.myCall(person, 20, 'female');
