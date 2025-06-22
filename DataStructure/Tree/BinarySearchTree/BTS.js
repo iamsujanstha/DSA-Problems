@@ -20,7 +20,7 @@ class BinarySearchTree {
     }
     let tempNode = this.root;
 
-    while (true) {
+    while (tempNode) {
       if (element === tempNode.value) return undefined;
 
       if (element < tempNode.value) {
@@ -40,6 +40,17 @@ class BinarySearchTree {
       }
     }
   }
+
+  levelOrderTraversal() {
+    if (!this.root) return;
+    let queue = [this.root];
+    while (queue.length > 0) {
+      let node = queue.shift();
+      console.log(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+  }
 }
 
 
@@ -52,6 +63,7 @@ binarySearchTree.insert(60);
 binarySearchTree.insert(50);
 binarySearchTree.insert(40);
 
+binarySearchTree.levelOrderTraversal();
 console.log(binarySearchTree);
 
 

@@ -11,19 +11,6 @@ class BinaryTree {
     this.root = null;
   }
 
-  leverOrderTraversal() {  // Time Complexity => O(n^2)
-    if (this.root === null) return;
-    let queue = [this.root];
-
-    while (queue.length > 0) {
-      let node = queue.shift();  // It is O(n) after removing first element all the remaing element shift the index
-      console.log(node.value);
-
-      if (node.left !== null) queue.push(node.left);
-      if (node.right !== null) queue.push(node.right);
-    }
-  }
-
   insert(value) {
     let newNode = new TreeNode(value);
     if (this.root === null) {
@@ -48,6 +35,19 @@ class BinaryTree {
       else {
         queue.push(node.right);
       }
+    }
+  }
+
+  leverOrderTraversal() {  // Time Complexity => O(n^2)
+    if (this.root === null) return;
+    let queue = [this.root];
+
+    while (queue.length > 0) {
+      let node = queue.shift();  // It is O(n) after removing first element all the remaing element shift the index
+      console.log(node.value);
+
+      if (node.left !== null) queue.push(node.left);
+      if (node.right !== null) queue.push(node.right);
     }
   }
 
