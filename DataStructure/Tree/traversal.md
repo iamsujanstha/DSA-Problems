@@ -79,6 +79,8 @@
 - **Inorder Traversal:** Left → Root → Right
 - **Postorder Traversal:** Left → Right → Root
 - **Level Order Traversal:** Level by level from top to bottom
+
+
 ## Conclusion
 Binary tree traversal methods are essential for various operations such as searching, inserting, and deleting nodes.
 Understanding these traversal techniques is crucial for efficiently working with binary trees in data structures and algorithms. Each traversal method has its own use cases and applications, making them valuable tools for programmers and computer scientists.

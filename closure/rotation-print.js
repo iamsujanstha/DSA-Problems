@@ -8,7 +8,7 @@ function rotationPrint(arr) {
     current.push(shifted);
     return [...current]; // return a copy to avoid mutation outside
   }
-  // (); -> no closure is formed because it the inner function is invoked inside the same outer function call.
+  // (); -> if we use `()` then no closure is formed because it the inner function is invoked inside the same outer function call.
 
 }
 

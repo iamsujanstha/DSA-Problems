@@ -9,7 +9,7 @@ function rateLimiter(maxAttempts, timeWindow) {
   let attempts = []; // Array to store the timestamps of the attempts independently for every user.
 
   return () => {
-    const now = Date.now(); // Current timestamp
+    const now = Date.now(); // Current timestamp ie 1750602601360
 
     // Filter out attempts that are outside the time window
     attempts = attempts.filter((timestamp) => now - timestamp < timeWindow);
@@ -23,7 +23,7 @@ function rateLimiter(maxAttempts, timeWindow) {
   };
 }
 
-const WINDOW_TIME = 3000;
+const WINDOW_TIME = 10000;
 const userRateLimiter = rateLimiter(3, WINDOW_TIME);
 
 console.log(userRateLimiter());

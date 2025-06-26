@@ -30,4 +30,20 @@
 
 ## 8. Segment Tree
 - **Description:** A tree for storing intervals or segments.
-- **Real-world use case:** Range query problems (e.g., sum, minimum).
+- **Real-world use case:** Range query problems (e.g., sum, minimum).'
+
+## Time Complexity Comparison
+
+| Tree Type           | Search        | Insertion     | Deletion      |
+|---------------------|--------------|--------------|--------------|
+| Binary Tree         | O(n)         | O(n)         | O(n)         |
+| Binary Search Tree  | O(h)\*        | O(h)\*        | O(h)\*        |
+| AVL Tree            | O(log n)     | O(log n)     | O(log n)     |
+| Red-Black Tree      | O(log n)     | O(log n)     | O(log n)     |
+| B-Tree              | O(log n)     | O(log n)     | O(log n)     |
+| Heap (Binary Heap)  | O(n)         | O(log n)     | O(log n)     |
+| Trie (Prefix Tree)  | O(L)         | O(L)         | O(L)         |
+| Segment Tree        | O(log n)     | O(log n)     | O(log n)     |
+
+- *h = height of the tree, which can be up to n in the worst case for an unbalanced BST.
+- *L = length of the key (for Trie).
