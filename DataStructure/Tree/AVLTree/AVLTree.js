@@ -16,6 +16,16 @@ class AVLTree {
     if (!node) return 0;
     return node.height;
   }
+
+  rightRotation(disbalanceNode) {
+    let newRoot = disbalanceNode.left;
+    disbalanceNode.left = newRoot.right;
+    newRoot.right = disbalanceNode;
+    disbalanceNode.height = 1 + Math.max(this.getHeight(disbalanceNode.left), this.getHeight(disbalanceNode.right));
+    newRoot.height = 1 + Math.max(this.getHeight(newRoot.left), this.getHeight(newRoot.right));
+
+    return newRoot;
+  }
 }
 
 
