@@ -14,4 +14,4 @@ function countKSubarraysBrute(nums, k) {
   return count;
 }
 
-console.log(countKSubarrays([5, 10, 11, 9, 5], 5))
+console.log(countKSubarraysBrute([5, 10, 11, 9, 5], 5))
